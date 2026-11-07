@@ -1,0 +1,29 @@
+{
+  "name": "the-legend-fast-food",
+  "version": "1.0.0",
+  "description": "The Legend Fast Food - Ultra-responsive fast food experience with 240-frame scroll animation, transparent layer scrubs, interactive Flavor Lab customizer, and seamless ordering bag.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "node -e \"console.log('Static build ready for Vercel deployment.')\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tcodezdigital/The-Legend-Fast-Food.git"
+  },
+  "keywords": [
+    "fast-food",
+    "scroll-animation",
+    "canvas-scrubbing",
+    "burger-customizer",
+    "vercel",
+    "interactive-web"
+  ],
+  "author": "tcodezdigital",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tcodezdigital/The-Legend-Fast-Food/issues"
+  },
+  "homepage": "https://github.com/tcodezdigital/The-Legend-Fast-Food#readme"
+}

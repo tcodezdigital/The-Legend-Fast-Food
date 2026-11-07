@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Legend Fast Food | Legendary Taste, Layer by Layer</title>
+  <meta name="description" content="Experience the architectural marvel of The Legend Burger. 100% Prime Angus Beef, smash-grilled at 450°F with molten aged cheddar on toasted brioche.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="logo.png" type="image/png">
+</head>
+<body class="dark-theme">
+
+  <!-- Header / Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <img src="logo.png" alt="The Legend Fast Food Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-name">THE LEGEND</span>
+          <span class="brand-sub">FAST FOOD & GRILL</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="nav-menu">
+        <a href="#hero-scroll-container" class="nav-item active">The Masterpiece</a>
+        <a href="#craft" class="nav-item">Our Craft</a>
+        <a href="#customizer" class="nav-item">Flavor Lab</a>
+        <a href="#menu" class="nav-item">Full Menu</a>
+        <a href="#reviews" class="nav-item">Reviews</a>
+        <a href="#locations" class="nav-item">Locations</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Cart Button -->
+        <button class="cart-btn" id="open-cart-btn" aria-label="Open Order Cart">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-text">Bag</span>
+          <span class="cart-badge" id="cart-count">0</span>
+        </button>
+
+        <a href="#menu" class="btn-primary order-cta">Order Now</a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Preloader & Frame Status Overlay -->
+  <div class="frame-loader" id="frame-loader">
+    <div class="loader-content">
+      <img src="logo.png" alt="The Legend Logo" class="loader-logo-img">
+      <div class="loader-title">THE LEGEND FAST FOOD</div>
+      <div class="loader-sub">Preparing high-definition 240-frame experience...</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loader-progress-bar"></div>
+      </div>
+      <div class="loader-stats">
+        <span id="loader-percent">0%</span>
+        <span id="loader-count">Loading frames: 0 / 240</span>
+      </div>
+      <button class="btn-skip" id="btn-skip" style="display: none;">Enter Experience</button>
+    </div>
+  </div>
+
+  <!-- MAIN SCROLL HERO SECTION (240 FRAMES) -->
+  <section class="hero-scroll-container" id="hero-scroll-container">
+    <div class="hero-sticky-frame" id="hero-sticky">
+
+      <!-- The Frame Canvas (Scaled perfectly to fit complete burger inside window) -->
+      <canvas id="hero-canvas"></canvas>
+
+      <!-- Side Exploded Layer Cards (Frames 39 to 110) - Strictly on Left & Right Sides, completely clear of burger -->
+      <div class="exploded-callouts" id="exploded-callouts">
+        <!-- Left Side Cards -->
+        <div class="side-column side-left">
+          <div class="layer-card card-crown">
+            <div class="card-badge">CROWN</div>
+            <h4>Artisanal Brioche</h4>
+            <p>18-hr slow fermented, glazed in cultured honey-butter & toasted sesame.</p>
+            <span class="pointer-line pointer-right"></span>
+          </div>
+
+          <div class="layer-card card-veggies">
+            <div class="card-badge">CRISP & TANG</div>
+            <h4>Farm Fresh Harvest</h4>
+            <p>Sweet grilled Walla Walla onions, vine-ripened tomatoes & crisp artisan pickles.</p>
+            <span class="pointer-line pointer-right"></span>
+          </div>
+        </div>
+
+        <!-- Right Side Cards -->
+        <div class="side-column side-right">
+          <div class="layer-card card-cheese">
+            <span class="pointer-line pointer-left"></span>
+            <div class="card-badge">THE MELT</div>
+            <h4>Molten Sharp Cheddar</h4>
+            <p>Twin blankets of aged Wisconsin cheddar dripping with secret legend glaze.</p>
+          </div>
+
+          <div class="layer-card card-patty">
+            <span class="pointer-line pointer-left"></span>
+            <div class="card-badge">THE HEART</div>
+            <h4>Twin Smashed Angus</h4>
+            <p>100% prime chuck & brisket smashed at 450°F for crispy caramelized lace crust.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story Overlays tied to scroll frames (strictly positioned in outer margins, fully fitting in window) -->
+
+      <!-- Stage 1: The Intro (Frames 1 - 38) -> Far Left Only -->
+      <div class="story-stage stage-intro active" id="stage-1">
+        <div class="stage-tag">WELCOME TO THE REVOLUTION</div>
+        <h1 class="hero-title">
+          <span>TASTE THAT DEFIES</span>
+          <span class="gradient-text">GRAVITY.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Double-smashed 100% Prime Angus Beef, bubbling sharp Wisconsin cheddar, and secret house sauce stacked to legendary perfection.
+        </p>
+        <div class="hero-features-row">
+          <div class="feat-pill"><span class="feat-icon">🔥</span> 450° Cast-Iron Sear</div>
+          <div class="feat-pill"><span class="feat-icon">🥩</span> Never Frozen Angus</div>
+        </div>
+        <div class="scroll-prompt">
+          <span class="mouse-icon"><span class="wheel"></span></span>
+          <span class="prompt-text">SCROLL TO EXPLODE</span>
+        </div>
+      </div>
+
+      <!-- Stage 3: The Searing Craft (Frames 111 - 180) -> Far Right Only -->
+      <div class="story-stage stage-sear" id="stage-3">
+        <div class="stage-tag">THE 450° TECHNIQUE</div>
+        <h2 class="hero-title-sm">
+          <span>SMASHED TO CRISPY</span>
+          <span class="gradient-text">LACE CRUST.</span>
+        </h2>
+        <p class="hero-subtitle">
+          We smash each ball of prime beef onto screaming hot chrome griddles. In 90 seconds, the Maillard reaction creates an unforgettable crisp crust while sealing in all savory au jus.
+        </p>
+        <div class="hero-stats-grid">
+          <div class="stat-card">
+            <span class="stat-num">450°</span>
+            <span class="stat-lbl">Griddle Temp</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">90s</span>
+            <span class="stat-lbl">Flash Searing</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">100%</span>
+            <span class="stat-lbl">Pure Angus</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 4: Reassembled & Order CTA (Frames 181 - 240) -> Far Right Only -->
+      <div class="story-stage stage-assembled" id="stage-4">
+        <div class="stage-tag">THE MASTERPIECE IS READY</div>
+        <h2 class="hero-title-sm">
+          <span>THE LEGEND</span>
+          <span class="gradient-text">DOUBLE SMASH.</span>
+        </h2>
+        <p class="hero-subtitle">
+          Fresh off the grill, assembled hot, and ready for your first life-changing bite.
+        </p>
+        <div class="order-cta-box">
+          <div class="cta-price">
+            <span class="price-val">$14.99</span>
+            <span class="price-desc">Includes Seasoned Fries & Legend Dip</span>
+          </div>
+          <div class="cta-buttons">
+            <button class="btn-primary btn-pulse" id="hero-order-btn">
+              <span>Add to Bag</span>
+              <span class="btn-arrow">→</span>
+            </button>
+            <a href="#menu" class="btn-outline">Explore Menu</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: OUR CRAFT & PHILOSOPHY -->
+  <section class="section-craft" id="craft">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">CRAFTED WITHOUT COMPROMISE</span>
+        <h2 class="section-title">The Anatomy of <span class="gradient-text">Legendary Flavor</span></h2>
+        <p class="section-desc">We tore down the traditional fast food playbook. Every step of our kitchen is dedicated to culinary artistry.</p>
+      </div>
+
+      <div class="craft-grid">
+        <div class="craft-card">
+          <div class="craft-icon-wrap">🥩</div>
+          <h3>Prime Angus Tri-Blend</h3>
+          <p>A custom 70/30 proprietary blend of brisket, short-rib, and chuck. Coarse ground daily in-house, never frozen, always juicy.</p>
+          <ul class="craft-specs">
+            <li>✓ 100% Certified Black Angus</li>
+            <li>✓ Coarse custom grind</li>
+            <li>✓ Zero hormones or antibiotics</li>
+          </ul>
+        </div>
+
+        <div class="craft-card highlight-card">
+          <div class="craft-badge">SIGNATURE SECRET</div>
+          <div class="craft-icon-wrap">🔥</div>
+          <h3>The 450° Smash Method</h3>
+          <p>Using our custom 12-lb heavy steel smash press, each patty is flattened in fractions of a second to create caramelized lace-edge crisps.</p>
+          <ul class="craft-specs">
+            <li>✓ Ultra-crisp lace edges</li>
+            <li>✓ Traps savory meat juices inside</li>
+            <li>✓ Cast-iron seasoned grill</li>
+          </ul>
+        </div>
+
+        <div class="craft-card">
+          <div class="craft-icon-wrap">🧀</div>
+          <h3>Aged Sharp Melt</h3>
+          <p>Real Wisconsin sharp cheddar cured for 12 months, steam-melted over searing patties until it wraps each layer in liquid velvet.</p>
+          <ul class="craft-specs">
+            <li>✓ 12-Month Wisconsin Cheddar</li>
+            <li>✓ High-temperature steam domed</li>
+            <li>✓ Secret roasted garlic butter baste</li>
+          </ul>
+        </div>
+
+        <div class="craft-card">
+          <div class="craft-icon-wrap">🍞</div>
+          <h3>Artisan Honey Brioche</h3>
+          <p>Baked fresh every morning at 4:30 AM by local bakery partners. Soft as a cloud, pillowy yet sturdy enough to hold every drop of sauce.</p>
+          <ul class="craft-specs">
+            <li>✓ 18-hour natural fermentation</li>
+            <li>✓ Toasted in clarified butter</li>
+            <li>✓ Golden toasted sesame seeds</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: INTERACTIVE FLAVOR LAB / CUSTOMIZER -->
+  <section class="section-customizer" id="customizer">
+    <div class="container">
+      <div class="customizer-box">
+        <div class="customizer-content">
+          <span class="section-badge">INTERACTIVE LAB</span>
+          <h2 class="section-title">Build Your <span class="gradient-text">Custom Legend</span></h2>
+          <p class="customizer-desc">Choose your patty count, cheese melt, premium toppings, and artisanal dips. Our grill masters assemble it to order.</p>
+
+          <div class="customizer-controls">
+            <!-- Patty Selection -->
+            <div class="control-group">
+              <label class="group-label">1. Smashed Angus Patties</label>
+              <div class="toggle-buttons" id="patty-options">
+                <button class="opt-btn" data-type="patty" data-val="1" data-price="10.99" title="Single Smashed Angus Patty (1/4 lb)">
+                  <img src="images/func-single-patty.png" alt="Single Smashed Patty" class="btn-func-thumb">
+                  <span class="btn-label">Single (1/4 lb)</span>
+                </button>
+                <button class="opt-btn active" data-type="patty" data-val="2" data-price="14.99" title="Double Smashed Angus Patties (1/2 lb)">
+                  <img src="images/func-double-patty.png" alt="Double Smashed Patties" class="btn-func-thumb">
+                  <span class="btn-label">Double (1/2 lb)</span>
+                </button>
+                <button class="opt-btn" data-type="patty" data-val="3" data-price="18.49" title="Triple Smashed Angus Patties (3/4 lb)">
+                  <img src="images/func-triple-patty.png" alt="Triple Smashed Patties" class="btn-func-thumb">
+                  <span class="btn-label">Triple (3/4 lb)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Cheese Selection -->
+            <div class="control-group">
+              <label class="group-label">2. Melted Artisan Cheese</label>
+              <div class="toggle-buttons" id="cheese-options">
+                <button class="opt-btn active" data-type="cheese" data-val="Aged Sharp Cheddar" data-price="0" title="Aged Sharp Wisconsin Cheddar">
+                  <img src="images/func-cheese-cheddar.png" alt="Aged Sharp Cheddar" class="btn-func-thumb">
+                  <span class="btn-label">Aged Cheddar</span>
+                </button>
+                <button class="opt-btn" data-type="cheese" data-val="Ghost Pepper Jack" data-price="0.50" title="Fiery Ghost Pepper Jack Cheese">
+                  <img src="images/func-cheese-pepperjack.png" alt="Ghost Pepper Jack" class="btn-func-thumb">
+                  <span class="btn-label">Ghost Pepper Jack (+0.50)</span>
+                </button>
+                <button class="opt-btn" data-type="cheese" data-val="Smoked Gouda" data-price="0.75" title="Caramelized Smoked Gouda Melt">
+                  <img src="images/func-cheese-gouda.png" alt="Smoked Gouda" class="btn-func-thumb">
+                  <span class="btn-label">Smoked Gouda (+0.75)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Add-ons Selection -->
+            <div class="control-group">
+              <label class="group-label">3. Legendary Upgrades</label>
+              <div class="addon-grid" id="addon-options">
+                <label class="checkbox-pill">
+                  <input type="checkbox" value="Crispy Applewood Bacon" data-price="1.99">
+                  <span class="pill-body">
+                    <img src="images/func-upgrade-bacon.png" alt="Applewood Bacon" class="btn-func-thumb">
+                    <span class="pill-text">Applewood Bacon (+$1.99)</span>
+                  </span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" value="Caramelized Sweet Onions" data-price="0.99" checked>
+                  <span class="pill-body">
+                    <img src="images/func-upgrade-onions.png" alt="Grilled Onions" class="btn-func-thumb">
+                    <span class="pill-text">Grilled Onions (+$0.99)</span>
+                  </span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" value="Truffle Herb Aioli" data-price="1.25">
+                  <span class="pill-body">
+                    <img src="images/func-upgrade-aioli.png" alt="Truffle Aioli" class="btn-func-thumb">
+                    <span class="pill-text">Truffle Aioli (+$1.25)</span>
+                  </span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" value="Sunny-Side Farm Egg" data-price="1.49">
+                  <span class="pill-body">
+                    <img src="images/func-upgrade-egg.png" alt="Farm Egg" class="btn-func-thumb">
+                    <span class="pill-text">Farm Egg (+$1.49)</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Customizer Summary Bar -->
+            <div class="customizer-footer">
+              <div class="custom-price-wrap">
+                <span class="custom-price-lbl">Total Crafted Price:</span>
+                <span class="custom-price" id="custom-total-price">$15.98</span>
+              </div>
+              <button class="btn-primary" id="add-custom-btn">
+                <span>Add Custom Burger to Bag</span>
+                <span>🛒</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="customizer-preview">
+          <div class="preview-badge">LIVE CHEF PREVIEW</div>
+          <div class="preview-burger-card">
+            <div class="preview-img-container">
+              <img src="images/custom-p2-cheddar.png" alt="Legend Custom Burger" id="custom-preview-img" class="custom-img">
+            </div>
+            <div class="preview-details">
+              <h3 id="custom-burger-title">The Legend Double Smash</h3>
+              <p id="custom-burger-summary">Double Angus patties, Aged Sharp Cheddar, Grilled Onions, Secret Sauce on Toasted Brioche.</p>
+              <div class="preview-tags" id="custom-burger-tags">
+                <span class="tag">Double Patty</span>
+                <span class="tag">Aged Cheddar</span>
+                <span class="tag">Grilled Onions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: FULL MENU WITH DEDICATED HIGH-RES IMAGES -->
+  <section class="section-menu" id="menu">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">CULINARY LINEUP</span>
+        <h2 class="section-title">The Legend <span class="gradient-text">Signature Menu</span></h2>
+        <p class="section-desc">Every recipe perfected through thousands of grill sessions. Pure satisfaction guaranteed.</p>
+      </div>
+
+      <!-- Menu Category Tabs -->
+      <div class="menu-tabs">
+        <button class="tab-btn active" data-category="all">All Items</button>
+        <button class="tab-btn" data-category="burgers">Burgers</button>
+        <button class="tab-btn" data-category="sides">Sides & Loaded Fries</button>
+        <button class="tab-btn" data-category="drinks">Hand-Spun Shakes</button>
+        <button class="tab-btn" data-category="combos">Combos</button>
+      </div>
+
+      <!-- Menu Grid Items with Real, Appetizing Photos -->
+      <div class="menu-grid" id="menu-grid">
+        <!-- Item 1: Classic Double -->
+        <div class="menu-card" data-category="burgers">
+          <div class="card-media">
+            <img src="images/classic-burger.jpg" alt="The Classic Legend Double" loading="lazy">
+            <span class="card-badge-top">👑 #1 BESTSELLER</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="item-name">The Classic Legend Double</h3>
+              <span class="item-price">$14.99</span>
+            </div>
+            <p class="item-desc">Twin smashed 100% Angus patties, double melted Wisconsin cheddar, pickles, grilled sweet onions, and secret legend sauce on toasted brioche.</p>
+            <div class="card-footer-row">
+              <span class="calorie-tag">820 Cal</span>
+              <button class="btn-add-cart" data-id="burger-double" data-name="The Classic Legend Double" data-price="14.99">
+                + Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Triple Beast -->
+        <div class="menu-card" data-category="burgers">
+          <div class="card-media">
+            <img src="images/triple-burger.jpg" alt="The Triple Beast Smasher" loading="lazy">
+            <span class="card-badge-top">🔥 CHEF'S PICK</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="item-name">The Triple Beast Smasher</h3>
+              <span class="item-price">$18.49</span>
+            </div>
+            <p class="item-desc">Three seared Angus patties, triple sharp cheddar, Applewood smoked bacon, crispy onion straws, and chipotle garlic aioli.</p>
+            <div class="card-footer-row">
+              <span class="calorie-tag">1,140 Cal</span>
+              <button class="btn-add-cart" data-id="burger-triple" data-name="The Triple Beast Smasher" data-price="18.49">
+                + Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Truffle Gouda -->
+        <div class="menu-card" data-category="burgers">
+          <div class="card-media">
+            <img src="images/truffle-burger.jpg" alt="Truffle & Smoked Gouda" loading="lazy">
+            <span class="card-badge-top">✨ GOURMET</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="item-name">Truffle & Smoked Gouda</h3>
+              <span class="item-price">$16.99</span>
+            </div>
+            <p class="item-desc">Double Angus beef, melted Dutch smoked gouda, wild portobello mushrooms, black summer truffle aioli, baby arugula on sesame brioche.</p>
+            <div class="card-footer-row">
+              <span class="calorie-tag">890 Cal</span>
+              <button class="btn-add-cart" data-id="burger-truffle" data-name="Truffle & Smoked Gouda" data-price="16.99">
+                + Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Firestarter Inferno -->
+        <div class="menu-card" data-category="burgers">
+          <div class="card-media">
+            <img src="images/spicy-burger.jpg" alt="The Firestarter Inferno" loading="lazy">
+            <span class="card-badge-top">🌶️ SPICY</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="item-name">The Firestarter Inferno</h3>
+              <span class="item-price">$15.49</span>
+            </div>
+            <p class="item-desc">Double smash patties, melted ghost pepper jack cheese, charred fire-roasted jalapeños, crispy habanero glaze, spicy ranch.</p>
+            <div class="card-footer-row">
+              <span class="calorie-tag">860 Cal</span>
+              <button class="btn-add-cart" data-id="burger-fire" data-name="The Firestarter Inferno" data-price="15.49">
+                + Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: Loaded Animal Fries -->
+        <div class="menu-card" data-category="sides">
+          <div class="card-media">
+            <img src="images/loaded-fries.jpg" alt="Legendary Loaded Fries" loading="lazy">
+            <span class="card-badge-top">🍟 FAN FAVORITE</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="item-name">Legendary Loaded Fries</h3>
+              <span class="item-price">$8.49</span>
+            </div>
+            <p class="item-desc">Golden crisp Kennebec potatoes smothered in molten cheddar cheese, chopped grilled smash burger, caramelized sweet onions, and legend dip.</p>
+            <div class="card-footer-row">
+              <span class="calorie-tag">680 Cal</span>
+              <button class="btn-add-cart" data-id="side-loaded-fries" data-name="Legendary Loaded Fries" data-price="8.49">
+                + Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6: Parmesan Truffle Fries -->
+        <div class="menu-card" data-category="sides">
+          <div class="card-media">
+            <img src="images/truffle-fries.jpg" alt="Parmesan Truffle Fries" loading="lazy">
+            <span class="card-badge-top">✨ VEGETARIAN</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="item-name">Parmesan Truffle Fries</h3>
+              <span class="item-price">$7.49</span>
+            </div>
+            <p class="item-desc">Skin-on artisan fries tossed in white truffle oil, shaved 24-month aged parmesan cheese, fresh chopped rosemary, and garlic herb aioli.</p>
+            <div class="card-footer-row">
+              <span class="calorie-tag">520 Cal</span>
+              <button class="btn-add-cart" data-id="side-truffle-fries" data-name="Parmesan Truffle Fries" data-price="7.49">
+                + Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 7: Hand-Spun Shake -->
+        <div class="menu-card" data-category="drinks">
+          <div class="card-media">
+            <img src="images/caramel-shake.jpg" alt="Salted Caramel Pretzel Shake" loading="lazy">
+            <span class="card-badge-top">🍦 HAND-SPUN</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="item-name">Salted Caramel Pretzel Shake</h3>
+              <span class="item-price">$6.99</span>
+            </div>
+            <p class="item-desc">Real churned custard ice cream, buttery sea-salt caramel ribbons, crushed pretzel crunch, topped with real vanilla bean whipped cream.</p>
+            <div class="card-footer-row">
+              <span class="calorie-tag">650 Cal</span>
+              <button class="btn-add-cart" data-id="drink-caramel-shake" data-name="Salted Caramel Pretzel Shake" data-price="6.99">
+                + Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 8: The Legend Feast Combo -->
+        <div class="menu-card" data-category="combos">
+          <div class="card-media">
+            <img src="images/combo-feast.jpg" alt="The Ultimate Legend Feast" loading="lazy">
+            <span class="card-badge-top">⭐ VALUE PACK</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="item-name">The Ultimate Legend Feast</h3>
+              <span class="item-price">$21.99</span>
+            </div>
+            <p class="item-desc">The Classic Double Smash burger, a full order of Legendary Loaded Fries, Hand-Spun Shake of your choice, and 2 signature dipping sauces.</p>
+            <div class="card-footer-row">
+              <span class="calorie-tag">Save $4.50</span>
+              <button class="btn-add-cart" data-id="combo-feast" data-name="The Ultimate Legend Feast" data-price="21.99">
+                + Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: REVIEWS & SOCIAL PROOF -->
+  <section class="section-reviews" id="reviews">
+    <div class="container">
+      <div class="reviews-header">
+        <div class="rating-badge">
+          <span class="stars">★★★★★</span>
+          <span class="score">4.9 / 5.0</span>
+          <span class="reviews-count">Based on 14,200+ Verified Orders</span>
+        </div>
+        <h2 class="section-title">Loved by Foodies, <span class="gradient-text">Feared by Competitors</span></h2>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"The crispy lace edges on this smash burger are unreal. You can hear the crunch on the first bite while the cheese and meat remain incredibly juicy. Hands down the best burger in the state."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">👨‍🍳</div>
+            <div class="reviewer-info">
+              <span class="name">Marcus Vance</span>
+              <span class="role">Executive Chef & Food Critic</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card highlight-review">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Watching the burger explode and assemble on the website is cool, but eating it in real life blew my mind. The honey brioche bun holds up to all the juices, and that secret sauce belongs in a museum."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">⭐</div>
+            <div class="reviewer-info">
+              <span class="name">Elena Rostova</span>
+              <span class="role">Verified Legend VIP Club Member</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Loaded animal fries + Double smash is my weekly Friday ritual. Service is blazing fast and the consistency is 10/10 every single time. Don't skip the salted caramel shake!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">🍔</div>
+            <div class="reviewer-info">
+              <span class="name">Jordan Davis</span>
+              <span class="role">Local Foodie & Influencer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: LOCATIONS & KITCHEN STATUS -->
+  <section class="section-locations" id="locations">
+    <div class="container">
+      <div class="locations-wrapper">
+        <div class="loc-details">
+          <div class="status-live">
+            <span class="status-dot"></span>
+            <span>GRILLS ARE FIRING • AVERAGE WAIT: 12-15 MINS</span>
+          </div>
+          <h2 class="section-title">Visit The <span class="gradient-text">Flagship Grill</span></h2>
+          <p>Dine-in luxury comfort, pick up curbside in under 2 minutes, or get piping hot delivery straight to your doorstep.</p>
+
+          <div class="loc-info-list">
+            <div class="info-item">
+              <span class="info-icon">📍</span>
+              <div>
+                <strong>The Legend Flagship Store</strong>
+                <p>742 Evergreen Boulevard, Suite 100 • Metro Center</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="info-icon">⏰</span>
+              <div>
+                <strong>Operating Hours</strong>
+                <p>Mon - Thu: 11:00 AM - Midnight<br>Fri - Sun: 11:00 AM - 3:00 AM (Late Night Smash)</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="info-icon">📞</span>
+              <div>
+                <strong>Grill Line & Reservations</strong>
+                <p>+1 (800) 555-LEGEND • delivery@legendfastfood.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="loc-cta">
+            <a href="#menu" class="btn-primary">Order Delivery Now</a>
+            <button class="btn-outline" onclick="alert('Directions opened in Google Maps!')">Get Directions</button>
+          </div>
+        </div>
+
+        <div class="loc-card-interactive">
+          <div class="map-mockup">
+            <div class="map-pin-pulse">
+              <span class="pulse-ring"></span>
+              <span class="pin-symbol">🍔</span>
+            </div>
+            <div class="map-overlay-info">
+              <h4>The Legend Fast Food</h4>
+              <p>Delivery Radius: 15 Miles • ⚡ Fast Courier Active</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img src="logo.png" alt="The Legend Fast Food" class="brand-logo-img">
+            <div class="brand-text">
+              <span class="brand-name">THE LEGEND</span>
+              <span class="brand-sub">FAST FOOD & GRILL</span>
+            </div>
+          </div>
+          <p class="footer-tagline">Crafting the standard of fast casual dining. 100% Angus smash burgers, hand-cut fries, and artisan shakes.</p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#hero-scroll-container">Deconstructed Hero</a></li>
+            <li><a href="#craft">Our Craft</a></li>
+            <li><a href="#customizer">Flavor Lab</a></li>
+            <li><a href="#menu">Full Menu</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Locations</h4>
+          <ul>
+            <li><a href="#locations">Metro Flagship</a></li>
+            <li><a href="#locations">Westside Drive-Thru</a></li>
+            <li><a href="#locations">Harbor Express</a></li>
+            <li><a href="#locations">Food Truck Tracker</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4>Join The VIP Club</h4>
+          <p>Get exclusive secret menu drops, free fry coupons, and invites to late-night tastings.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the VIP Club! Check your inbox for your free fry coupon.');">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 The Legend Fast Food Co. All rights reserved. Built with passion & 240-frame scroll animation.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Nutritional Transparency</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDE-OVER CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <div class="cart-title-row">
+        <h3>Your Order Bag</h3>
+        <span class="cart-items-tag" id="drawer-items-count">0 items</span>
+      </div>
+      <button class="cart-close-btn" id="close-cart-btn" aria-label="Close Cart">✕</button>
+    </div>
+
+    <div class="cart-drawer-body" id="cart-items-container">
+      <!-- Empty State -->
+      <div class="cart-empty-state" id="cart-empty-view">
+        <div class="empty-icon">🍔</div>
+        <h4>Your bag is feeling light</h4>
+        <p>Explore our menu or the 240-frame interactive burger hero to add legendary items.</p>
+        <a href="#menu" class="btn-primary" onclick="document.getElementById('cart-drawer').classList.remove('open'); document.getElementById('cart-overlay').classList.remove('open');">Browse Menu</a>
+      </div>
+
+      <!-- Item list injected by JavaScript -->
+      <div class="cart-items-list" id="cart-list" style="display: none;"></div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cart-drawer-footer" style="display: none;">
+      <div class="cost-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="cost-row">
+        <span>Estimated Tax (8%)</span>
+        <span id="cart-tax">$0.00</span>
+      </div>
+      <div class="cost-row">
+        <span>Delivery Fee</span>
+        <span class="green-text">FREE</span>
+      </div>
+      <div class="cost-row total-row">
+        <span>Estimated Total</span>
+        <span class="total-val" id="cart-total">$0.00</span>
+      </div>
+      <button class="btn-primary checkout-btn" id="btn-checkout">
+        <span>Proceed to Checkout</span>
+        <span>→</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ORDER SUCCESS MODAL -->
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal-card">
+      <div class="modal-icon">🎉</div>
+      <h3>Order Placed with The Legend!</h3>
+      <p class="modal-msg">Order #LG-94821 is being prepped in our kitchen right now. Get ready for legendary flavor!</p>
+      <div class="order-ticket">
+        <div class="ticket-row"><span>Status:</span> <span class="badge-status">🔥 Grilling Sizzling Hot</span></div>
+        <div class="ticket-row"><span>Estimated Delivery:</span> <strong>20 - 25 Mins</strong></div>
+        <div class="ticket-row"><span>Delivery Address:</span> <span>Your Current Location</span></div>
+      </div>
+      <button class="btn-primary" id="btn-close-modal">Awesome, Keep Browsing</button>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notification" id="toast">
+    <span class="toast-icon">✨</span>
+    <span class="toast-message" id="toast-msg">Item added to bag!</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
